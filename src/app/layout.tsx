@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import { CartProvider } from "@/context/CartContext";
 
 export const metadata: Metadata = {
-  title: "ShopVerse - Your One-Stop Ecommerce Store",
+  title: "Vashuba_collections - Your One-Stop Ecommerce Store",
   description: "Discover amazing products at great prices. Shop the latest trends in fashion, electronics, and home goods.",
 };
 
