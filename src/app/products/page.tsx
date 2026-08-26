@@ -1,0 +1,50 @@
+"use client";
+
+import { useState } from "react";
+import { products, categories } from "@/lib/products";
+import ProductCard from "@/components/ProductCard";
+
+export default function ProductsPage() {
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
+  const filtered = selectedCategory === "All"
+    ? products
+    : products.filter((p) => p.category === selectedCategory);
+
+  return (
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="text-center mb-12">
+        <h1 className="text-4xl font-bold text-dark-900 mb-4">Our Products</h1>
+        <p className="text-dark-600 max-w-2xl mx-auto">Browse our curated collection of premium products.</p>
+      </div>
+
+      <div className="flex flex-wrap justify-center gap-3 mb-10">
+        {categories.map((cat) => (
+          <button
+            key={cat}
+            onClick={() => setSelectedCategory(cat)}
+            className={`px-5 py-2 rounded-full font-medium transition-all duration-200 ${
+              selectedCategory === cat
+                ? "bg-primary-600 text-white shadow-md"
+                : "bg-dark-100 text-dark-600 hover:bg-dark-200"
+            }`}
+          >
+            {cat}
+          </button>
+        ))}
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {filtered.map((product) => (
+          <ProductCard key={product.id} product={product} />
+        ))}
+      </div>
+
+      {filtered.length === 0 && (
+        <div className="text-center py-20 text-dark-500">
+          <p className="text-xl">No products found in this category.</p>
+        </div>
+      )}
+    </div>
+  );
+}
