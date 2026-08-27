@@ -24,7 +24,7 @@ export default function Footer() {
               <p>123 Commerce Street</p>
               <p>New York, NY 10001</p>
               <p>support@shopverse.com</p>
-              <p>+1 (555) 123-4567</p>
+              <p>+91 9989115552</p>
             </div>
           </div>
         </div>
