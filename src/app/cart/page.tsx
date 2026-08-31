@@ -35,7 +35,7 @@ export default function CartPage() {
               </div>
               <div className="flex-1 min-w-0">
                 <h3 className="font-semibold text-dark-900 truncate">{item.name}</h3>
-                <p className="text-primary-600 font-bold">${item.price.toFixed(2)}</p>
+                <p className="text-primary-600 font-bold">₹{item.price.toFixed(2)}</p>
                 <div className="flex items-center gap-3 mt-2">
                   <button
                     onClick={() => updateQuantity(item.id, item.quantity - 1)}
@@ -61,7 +61,7 @@ export default function CartPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                   </svg>
                 </button>
-                <span className="font-bold text-dark-900">${(item.price * item.quantity).toFixed(2)}</span>
+                <span className="font-bold text-dark-900">₹{(item.price * item.quantity).toFixed(2)}</span>
               </div>
             </div>
           ))}
@@ -73,15 +73,15 @@ export default function CartPage() {
             <div className="space-y-3 mb-6">
               <div className="flex justify-between text-dark-600">
                 <span>Subtotal ({items.reduce((s, i) => s + i.quantity, 0)} items)</span>
-                <span>${total.toFixed(2)}</span>
+                <span>₹{total.toFixed(2)}</span>
               </div>
               <div className="flex justify-between text-dark-600">
                 <span>Shipping</span>
-                <span className="text-green-600 font-medium">{total >= 50 ? "Free" : "$4.99"}</span>
+                <span className="text-green-600 font-medium">{total >= 500 ? "Free" : "₹99"}</span>
               </div>
               <div className="border-t border-dark-300 pt-3 flex justify-between text-lg font-bold">
                 <span>Total</span>
-                <span>${(total + (total >= 50 ? 0 : 4.99)).toFixed(2)}</span>
+                <span>₹{(total + (total >= 500 ? 0 : 99)).toFixed(2)}</span>
               </div>
             </div>
             <Link href="/checkout" className="btn-primary w-full text-center block">

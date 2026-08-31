@@ -8,7 +8,7 @@ export default function CheckoutPage() {
   const { items, total, clearCart } = useCart();
   const [submitted, setSubmitted] = useState(false);
 
-  const shipping = total >= 50 ? 0 : 4.99;
+  const shipping = total >= 500 ? 0 : 99;
   const grandTotal = total + shipping;
 
   if (items.length === 0 && !submitted) {
@@ -80,7 +80,7 @@ export default function CheckoutPage() {
             </div>
 
             <button type="submit" className="btn-primary w-full text-center text-lg py-4">
-              Place Order - ${grandTotal.toFixed(2)}
+              Place Order - ₹{grandTotal.toFixed(2)}
             </button>
           </form>
         </div>
@@ -92,22 +92,22 @@ export default function CheckoutPage() {
               {items.map((item) => (
                 <div key={item.id} className="flex justify-between text-sm">
                   <span className="text-dark-600 truncate mr-2">{item.name} x{item.quantity}</span>
-                  <span className="font-medium">${(item.price * item.quantity).toFixed(2)}</span>
+                  <span className="font-medium">₹{(item.price * item.quantity).toFixed(2)}</span>
                 </div>
               ))}
             </div>
             <div className="border-t border-dark-300 pt-3 space-y-2">
               <div className="flex justify-between text-dark-600">
                 <span>Subtotal</span>
-                <span>${total.toFixed(2)}</span>
+                <span>₹{total.toFixed(2)}</span>
               </div>
               <div className="flex justify-between text-dark-600">
                 <span>Shipping</span>
-                <span>{shipping === 0 ? "Free" : `$${shipping.toFixed(2)}`}</span>
+                <span>{shipping === 0 ? "Free" : `₹${shipping.toFixed(2)}`}</span>
               </div>
               <div className="border-t border-dark-300 pt-3 flex justify-between text-lg font-bold">
                 <span>Total</span>
-                <span>${grandTotal.toFixed(2)}</span>
+                <span>₹{grandTotal.toFixed(2)}</span>
               </div>
             </div>
           </div>
