@@ -21,8 +21,9 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-4">Contact Info</h4>
             <div className="flex flex-col gap-2 text-dark-400">
-              <p>123 Commerce Street</p>
-              <p>New York, NY 10001</p>
+              <p>Hanuman Mandir, Kasimpur</p>
+              <p>Zaheerabad, Sangareddy</p>
+              <p>Telangana 502221</p>
               <p>support@shopverse.com</p>
               <p>+91 9989115552</p>
             </div>
