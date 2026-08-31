@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h3 className="text-xl font-bold mb-4">Vashuba_collections</h3>
+            <h3 className="text-xl font-bold mb-4">prime_agro_farms</h3>
             <p className="text-dark-400">Your one-stop destination for quality products at amazing prices.</p>
           </div>
           <div>
@@ -30,7 +30,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="border-t border-dark-700 mt-8 pt-8 text-center text-dark-500 text-sm">
-          &copy; {new Date().getFullYear()} Vashuba_collections. All rights reserved.
+          &copy; {new Date().getFullYear()} prime_agro_farms. All rights reserved.
         </div>
       </div>
     </footer>
