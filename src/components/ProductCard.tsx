@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { Product } from "@/lib/products";
 import { useCart } from "@/context/CartContext";
+import { formatPrice } from "@/lib/format";
 
 export default function ProductCard({ product }: { product: Product }) {
   const { addItem } = useCart();
@@ -38,7 +39,7 @@ export default function ProductCard({ product }: { product: Product }) {
         </div>
         <p className="text-dark-600 text-sm mb-3 line-clamp-2">{product.description}</p>
         <div className="flex items-center justify-between">
-          <span className="text-xl font-bold text-dark-900">₹{product.price.toFixed(2)}</span>
+          <span className="text-xl font-bold text-dark-900">{formatPrice(product.price)}</span>
           <button
             onClick={() => addItem(product)}
             className="btn-primary text-sm px-4 py-2"

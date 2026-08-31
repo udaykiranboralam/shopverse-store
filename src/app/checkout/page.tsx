@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useCart } from "@/context/CartContext";
 import Link from "next/link";
+import { formatPrice } from "@/lib/format";
 
 export default function CheckoutPage() {
   const { items, total, clearCart } = useCart();
@@ -80,7 +81,7 @@ export default function CheckoutPage() {
             </div>
 
             <button type="submit" className="btn-primary w-full text-center text-lg py-4">
-              Place Order - ₹{grandTotal.toFixed(2)}
+              Place Order - {formatPrice(grandTotal)}
             </button>
           </form>
         </div>
@@ -92,22 +93,22 @@ export default function CheckoutPage() {
               {items.map((item) => (
                 <div key={item.id} className="flex justify-between text-sm">
                   <span className="text-dark-600 truncate mr-2">{item.name} x{item.quantity}</span>
-                  <span className="font-medium">₹{(item.price * item.quantity).toFixed(2)}</span>
+                  <span className="font-medium">{formatPrice(item.price * item.quantity)}</span>
                 </div>
               ))}
             </div>
             <div className="border-t border-dark-300 pt-3 space-y-2">
               <div className="flex justify-between text-dark-600">
                 <span>Subtotal</span>
-                <span>₹{total.toFixed(2)}</span>
+                <span>{formatPrice(total)}</span>
               </div>
               <div className="flex justify-between text-dark-600">
                 <span>Shipping</span>
-                <span>{shipping === 0 ? "Free" : `₹${shipping.toFixed(2)}`}</span>
+                <span>{shipping === 0 ? "Free" : formatPrice(shipping)}</span>
               </div>
               <div className="border-t border-dark-300 pt-3 flex justify-between text-lg font-bold">
                 <span>Total</span>
-                <span>₹{grandTotal.toFixed(2)}</span>
+                <span>{formatPrice(grandTotal)}</span>
               </div>
             </div>
           </div>
