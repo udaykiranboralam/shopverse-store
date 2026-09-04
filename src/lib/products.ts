@@ -13,7 +13,7 @@ export const products: Product[] = [
     id: "1",
     name: "Mango Plantation Plot",
     description: "Own a piece of lush mango orchard. Premium mango trees planted and maintained with organic practices.",
-    category: "Fruit Plantations",
+    category: "Fruits",
     image: "https://images.unsplash.com/photo-1553279768-865429fa0078?w=400&h=400&fit=crop",
     rating: 4.9,
   },
@@ -22,7 +22,7 @@ export const products: Product[] = [
     name: "Anjeer (Fig) Plantation Plot",
     price: 4999,
     description: "Premium Dyanna California Fig variety. Large-scale anjeer plantation for dry fig production.",
-    category: "Farm Produce",
+    category: "Fruits",
     image: "https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?w=400&h=400&fit=crop",
     rating: 4.8,
   },
@@ -30,7 +30,7 @@ export const products: Product[] = [
     id: "3",
     name: "Coconut Plantation Plot",
     description: "Tropical coconut plantation with high-yield hybrid varieties. Long-term investment with steady returns.",
-    category: "Fruit Plantations",
+    category: "Fruits",
     image: "https://images.unsplash.com/photo-1599940824399-b87987ceb72a?w=400&h=400&fit=crop",
     rating: 4.7,
   },
@@ -85,4 +85,4 @@ export const products: Product[] = [
   },
 ];
 
-export const categories = ["All", "Fruit Plantations", "Forestry", "Farm Plots", "Farm Retreat", "Farm Produce"];
+export const categories = ["Fruits", "Forestry", "Farm Plots", "Farm Retreat", "Farm Produce"];
