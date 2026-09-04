@@ -77,7 +77,6 @@ export const products: Product[] = [
   {
     id: "9",
     name: "Organic Anjeer (Dry Fig) Box",
-    price: 899,
     description: "Farm-grown, naturally processed dry figs. Premium quality Anjeer direct from our plantations.",
     category: "Farm Produce",
     image: "https://images.unsplash.com/photo-1615484477778-ca3b77940c25?w=400&h=400&fit=crop",
