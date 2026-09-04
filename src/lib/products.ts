@@ -20,8 +20,9 @@ export const products: Product[] = [
   {
     id: "2",
     name: "Anjeer (Fig) Plantation Plot",
+    price: 4999,
     description: "Premium Dyanna California Fig variety. Large-scale anjeer plantation for dry fig production.",
-    category: "Fruit Plantations",
+    category: "Farm Produce",
     image: "https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?w=400&h=400&fit=crop",
     rating: 4.8,
   },
