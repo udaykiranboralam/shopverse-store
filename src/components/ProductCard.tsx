@@ -50,7 +50,7 @@ export default function ProductCard({ product }: { product: Product }) {
           </div>
         ) : (
           <a
-            href="https://wa.me/918073648872"
+            href={`https://wa.me/918073648872?text=${encodeURIComponent(`Hi, I'm interested in ${product.name}. Please share more details.`)}`}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary text-sm px-4 py-2 text-center block"
