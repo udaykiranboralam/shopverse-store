@@ -60,7 +60,7 @@ function HeroSlideshow() {
       {heroSlides.map((slide, i) => (
         <div
           key={slide.src}
-          className={`absolute inset-0 flex items-start justify-center transition-opacity duration-1000 ${i === index ? "opacity-100" : "opacity-0"}`}
+          className={`absolute inset-0 flex items-start justify-center ${i === index ? "animate-kenburns" : "opacity-0"}`}
         >
           <Image
             src={slide.src}
