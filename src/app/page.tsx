@@ -76,22 +76,37 @@ function HeroSlideshow() {
       <div className="absolute inset-0 bg-black/30" />
 
       <div className="relative max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-24">
-        <div className="max-w-[650px] bg-black/30 backdrop-blur-[2px] rounded-2xl p-6 md:p-8">
-          <h1 className="text-5xl md:text-6xl font-extrabold leading-[1.1] mb-6">
-            Organic Farming <br />
-            <span className="text-[#7CFC00]">Natural Living</span>
-          </h1>
-          <p className="text-xl md:text-2xl mb-8 leading-relaxed">
-            సేంద్రియ వ్యవసాయం, సహజ జీవనం
-            <br />
-            <br />
-            Own a farm. Experience nature.
-            <br />
-            Invest in sustainable plantations.
-          </p>
-          <Link href="/products" className="inline-block px-10 py-4 bg-primary-600 text-white rounded-full font-semibold hover:bg-[#205d23] hover:-translate-y-1 transition-all">
-            Explore Offerings
-          </Link>
+        <div className="flex items-center justify-between gap-10">
+          <div className="max-w-[650px] bg-black/30 backdrop-blur-[2px] rounded-2xl p-6 md:p-8">
+            <h1 className="text-5xl md:text-6xl font-extrabold leading-[1.1] mb-6">
+              Organic Farming <br />
+              <span className="text-[#7CFC00]">Natural Living</span>
+            </h1>
+            <p className="text-xl md:text-2xl mb-8 leading-relaxed">
+              సేంద్రియ వ్యవసాయం, సహజ జీవనం
+              <br />
+              <br />
+              Own a farm. Experience nature.
+              <br />
+              Invest in sustainable plantations.
+            </p>
+            <Link href="/products" className="inline-block px-10 py-4 bg-primary-600 text-white rounded-full font-semibold hover:bg-[#205d23] hover:-translate-y-1 transition-all">
+              Explore Offerings
+            </Link>
+          </div>
+
+          <div className="hidden lg:block flex-shrink-0">
+            <div className="relative">
+              <div className="absolute -inset-6 rounded-full bg-white/10 backdrop-blur-sm" />
+              <Image
+                src="/logo.png"
+                alt="Prime Agro Farms Logo"
+                width={320}
+                height={320}
+                className="relative rounded-full border-8 border-white/30 shadow-2xl object-cover w-[320px] h-[320px]"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>
