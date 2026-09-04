@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { products } from "@/lib/products";
@@ -37,67 +37,73 @@ const offerLinks = [
   { title: "Farm Ownership", category: "Farm Plots", icon: "🏡", desc: "Managed Farm Plots, Weekend Retreat, Nature Living, Plantation Investment" },
 ];
 
+const heroSlides = [
+  { src: "/mango.png", alt: "Mango Plantation" },
+  { src: "/anjeer.png", alt: "Anjeer Plantation" },
+  { src: "/mahaghony.png", alt: "Mahogany Plantation" },
+  { src: "/redsandal.png", alt: "Red Sandalwood Plantation" },
+];
+
+function HeroSlideshow() {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % heroSlides.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <section className="relative flex items-center min-h-screen text-white overflow-hidden">
+      {heroSlides.map((slide, i) => (
+        <div
+          key={slide.src}
+          className={`absolute inset-0 transition-opacity duration-1000 ${i === index ? "opacity-100" : "opacity-0"}`}
+        >
+          <Image
+            src={slide.src}
+            alt={slide.alt}
+            fill
+            className="object-cover"
+            sizes="100vw"
+            priority={i === 0}
+          />
+        </div>
+      ))}
+      {/* Dark overlay for text readability */}
+      <div className="absolute inset-0 bg-black/55" />
+
+      <div className="relative max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-24">
+        <div className="max-w-[650px]">
+          <h1 className="text-5xl md:text-6xl font-extrabold leading-[1.1] mb-6">
+            Organic Farming <br />
+            <span className="text-[#7CFC00]">Natural Living</span>
+          </h1>
+          <p className="text-xl md:text-2xl mb-8 leading-relaxed">
+            సేంద్రియ వ్యవసాయం, సహజ జీవనం
+            <br />
+            <br />
+            Own a farm. Experience nature.
+            <br />
+            Invest in sustainable plantations.
+          </p>
+          <Link href="/products" className="inline-block px-10 py-4 bg-primary-600 text-white rounded-full font-semibold hover:bg-[#205d23] hover:-translate-y-1 transition-all">
+            Explore Offerings
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function Home() {
   const featured = products.slice(0, 3);
 
   return (
     <div>
       {/* HERO */}
-      <section className="relative flex items-center min-h-screen text-white overflow-hidden">
-        {/* Background: 2x2 collage of plantation images */}
-        <div className="absolute inset-0 grid grid-cols-2 grid-rows-2">
-          <Image
-            src="/mango.png"
-            alt="Mango Plantation"
-            fill
-            className="object-cover"
-            sizes="50vw"
-          />
-          <Image
-            src="/anjeer.png"
-            alt="Anjeer Plantation"
-            fill
-            className="object-cover"
-            sizes="50vw"
-          />
-          <Image
-            src="/mahaghony.png"
-            alt="Mahogany Plantation"
-            fill
-            className="object-cover"
-            sizes="50vw"
-          />
-          <Image
-            src="/redsandal.png"
-            alt="Red Sandalwood Plantation"
-            fill
-            className="object-cover"
-            sizes="50vw"
-          />
-        </div>
-        {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-black/55" />
-
-        <div className="relative max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-24">
-          <div className="max-w-[650px]">
-            <h1 className="text-5xl md:text-6xl font-extrabold leading-[1.1] mb-6">
-              Organic Farming <br />
-              <span className="text-[#7CFC00]">Natural Living</span>
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 leading-relaxed">
-              సేంద్రియ వ్యవసాయం, సహజ జీవనం
-              <br />
-              <br />
-              Own a farm. Experience nature.
-              <br />
-              Invest in sustainable plantations.
-            </p>
-            <Link href="/products" className="inline-block px-10 py-4 bg-primary-600 text-white rounded-full font-semibold hover:bg-[#205d23] hover:-translate-y-1 transition-all">
-              Explore Offerings
-            </Link>
-          </div>
-        </div>
-      </section>
+      <HeroSlideshow />
 
       {/* ABOUT */}
       <FadeSection className="px-4 sm:px-6 lg:px-8 py-24">
