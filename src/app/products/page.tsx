@@ -7,14 +7,12 @@ import ProductCard from "@/components/ProductCard";
 
 function ProductsContent() {
   const searchParams = useSearchParams();
-  const initialCategory = searchParams.get("category") || "All";
+  const initialCategory = searchParams.get("category") || "";
   const [selectedCategory, setSelectedCategory] = useState(
-    categories.includes(initialCategory) ? initialCategory : "All"
+    categories.includes(initialCategory) ? initialCategory : ""
   );
 
-  const allCategories = ["All", ...categories];
-
-  const filtered = selectedCategory === "All"
+  const filtered = selectedCategory === ""
     ? products
     : products.filter((p) => p.category === selectedCategory);
 
@@ -26,7 +24,7 @@ function ProductsContent() {
       </div>
 
       <div className="flex flex-wrap justify-center gap-3 mb-10">
-        {allCategories.map((cat) => (
+        {categories.map((cat) => (
           <button
             key={cat}
             onClick={() => setSelectedCategory(cat)}
