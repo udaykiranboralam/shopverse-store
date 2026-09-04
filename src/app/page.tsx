@@ -3,6 +3,12 @@ import Image from "next/image";
 import { products } from "@/lib/products";
 import ProductCard from "@/components/ProductCard";
 
+const offerLinks = [
+  { title: "Fruit Plantations", category: "Fruit Plantations", desc: "Mango, Anjeer (Fig), Coconut — premium varieties with organic care.", icon: "M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" },
+  { title: "Forestry Development", category: "Forestry", desc: "Mahogany and Red Sandalwood plantations — high-value timber investments.", icon: "M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" },
+  { title: "Farm Plots & Retreats", category: "All", desc: "Own your farm, experience natural living, weekend retreats in nature.", icon: "M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" },
+];
+
 export default function Home() {
   const featured = products.slice(0, 3);
 
@@ -20,7 +26,7 @@ export default function Home() {
               Prime Agro Farms offers organic farming, fruit plantations, forestry development, and farm plot ownership near Zaheerabad.
             </p>
             <p className="text-primary-200 text-base mb-8">
-              సేంద్రియ వ్యవసాయం, సహజ జీవనం &middot; ಸೇಂದ್ರಿಯ ಕೃಷಿ, ಸಹಜ ಜೀವನ
+              సేంద్రియ వ్యవసాయం, సహజ జీవనం &middot; ಸೇಂದ್ರಿಯ ಕೃషి, ಸಹಜ జీవనం
             </p>
             <div className="flex flex-wrap gap-4">
               <Link href="/products" className="inline-block bg-white text-primary-700 px-8 py-4 rounded-lg font-bold text-lg hover:bg-primary-50 transition-colors">
@@ -51,20 +57,23 @@ export default function Home() {
           <p className="text-dark-600 max-w-2xl mx-auto">Combining agriculture, lifestyle, and long-term value creation.</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {[
-            { title: "Fruit Plantations", desc: "Mango, Anjeer (Fig), Coconut — premium varieties with organic care.", icon: "M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" },
-            { title: "Forestry Development", desc: "Mahogany and Red Sandalwood plantations — high-value timber investments.", icon: "M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" },
-            { title: "Farm Plots & Retreats", desc: "Own your farm, experience natural living, weekend retreats in nature.", icon: "M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" },
-          ].map((item) => (
-            <div key={item.title} className="p-8 bg-white rounded-xl shadow-md border border-dark-100 text-center">
-              <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          {offerLinks.map((item) => (
+            <Link
+              key={item.title}
+              href={`/products?category=${encodeURIComponent(item.category)}`}
+              className="p-8 bg-white rounded-xl shadow-md border border-dark-100 text-center hover:shadow-xl hover:border-primary-300 transition-all duration-300 group"
+            >
+              <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary-200 transition-colors">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d={item.icon} />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+              <h3 className="text-xl font-semibold mb-2 group-hover:text-primary-700 transition-colors">{item.title}</h3>
               <p className="text-dark-600">{item.desc}</p>
-            </div>
+              <span className="inline-block mt-3 text-primary-600 font-semibold text-sm group-hover:underline">
+                View Offerings &rarr;
+              </span>
+            </Link>
           ))}
         </div>
       </section>

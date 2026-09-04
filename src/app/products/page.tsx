@@ -1,11 +1,18 @@
 "use client";
 
-import { useState } from "react";
+import { Suspense, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { products, categories } from "@/lib/products";
 import ProductCard from "@/components/ProductCard";
 
-export default function ProductsPage() {
-  const [selectedCategory, setSelectedCategory] = useState("All");
+function ProductsContent() {
+  const searchParams = useSearchParams();
+  const initialCategory = searchParams.get("category") || "All";
+  const [selectedCategory, setSelectedCategory] = useState(
+    categories.includes(initialCategory) ? initialCategory : "All"
+  );
+
+  const allCategories = ["All", ...categories];
 
   const filtered = selectedCategory === "All"
     ? products
@@ -19,7 +26,7 @@ export default function ProductsPage() {
       </div>
 
       <div className="flex flex-wrap justify-center gap-3 mb-10">
-        {categories.map((cat) => (
+        {allCategories.map((cat) => (
           <button
             key={cat}
             onClick={() => setSelectedCategory(cat)}
@@ -46,5 +53,13 @@ export default function ProductsPage() {
         </div>
       )}
     </div>
+  );
+}
+
+export default function ProductsPage() {
+  return (
+    <Suspense fallback={<div className="text-center py-20 text-dark-500">Loading...</div>}>
+      <ProductsContent />
+    </Suspense>
   );
 }
