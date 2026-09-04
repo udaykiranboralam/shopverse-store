@@ -56,17 +56,17 @@ function HeroSlideshow() {
 
   return (
     <section className="relative flex items-center min-h-screen text-white overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-[#205d23] to-[#163d17]" />
       {heroSlides.map((slide, i) => (
         <div
           key={slide.src}
-          className={`absolute inset-0 flex items-center justify-center transition-opacity duration-1000 ${i === index ? "opacity-100" : "opacity-0"}`}
-          style={{ background: "linear-gradient(rgba(32,93,35,0.85), rgba(32,93,35,0.85))" }}
+          className={`absolute inset-0 flex items-start justify-center transition-opacity duration-1000 ${i === index ? "opacity-100" : "opacity-0"}`}
         >
           <Image
             src={slide.src}
             alt={slide.alt}
             fill
-            className="object-contain"
+            className="object-contain object-top"
             sizes="100vw"
             priority={i === 0}
           />
