@@ -38,26 +38,14 @@ export default function ProductCard({ product }: { product: Product }) {
           <span className="text-sm text-dark-500 ml-1">{product.rating}</span>
         </div>
         <p className="text-dark-600 text-sm mb-3 line-clamp-2">{product.description}</p>
-        {product.price ? (
-          <div className="flex items-center justify-between">
-            <span className="text-xl font-bold text-dark-900">{formatPrice(product.price)}</span>
-            <button
-              onClick={() => addItem(product as Product & { price: number })}
-              className="btn-primary text-sm px-4 py-2"
-            >
-              Add to Cart
-            </button>
-          </div>
-        ) : (
-          <a
-            href="https://wa.me/918073648872"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-secondary text-sm px-4 py-2 text-center block"
-          >
-            Contact Us
-          </a>
-        )}
+        <a
+          href="https://wa.me/918073648872"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-primary text-sm px-4 py-2 text-center block"
+        >
+          Enquire on WhatsApp
+        </a>
       </div>
     </div>
   );
