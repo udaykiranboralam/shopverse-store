@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { products } from "@/lib/products";
 import ProductCard from "@/components/ProductCard";
 
@@ -9,11 +10,12 @@ export default function Home() {
     <div>
       <section className="relative bg-gradient-to-br from-primary-600 to-primary-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
-          <div className="max-w-3xl">
-            <p className="text-primary-200 text-sm font-semibold uppercase tracking-wider mb-4">Organic Farming, Natural Living</p>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              Grow With Nature. Invest In Life.
-            </h1>
+          <div className="flex items-center gap-6">
+            <div className="max-w-3xl">
+              <p className="text-primary-200 text-sm font-semibold uppercase tracking-wider mb-4">Organic Farming, Natural Living</p>
+              <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                Grow With Nature. Invest In Life.
+              </h1>
             <p className="text-lg md:text-xl text-primary-100 mb-4">
               Prime Agro Farms offers organic farming, fruit plantations, forestry development, and farm plot ownership near Zaheerabad.
             </p>
@@ -27,6 +29,16 @@ export default function Home() {
               <Link href="/contact" className="inline-block border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white/10 transition-colors">
                 Contact Us
               </Link>
+            </div>
+            </div>
+            <div className="hidden md:block flex-shrink-0">
+              <Image
+                src="/logo.png"
+                alt="Prime Agro Farms Logo"
+                width={200}
+                height={200}
+                className="rounded-full border-4 border-white/30 shadow-2xl"
+              />
             </div>
           </div>
         </div>
