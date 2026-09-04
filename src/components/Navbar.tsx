@@ -12,7 +12,7 @@ export default function Navbar() {
 
   const navLinks = [
     { href: "/", label: "Home" },
-    { href: "/products", label: "Products" },
+    { href: "/products", label: "Offerings" },
     { href: "/contact", label: "Contact" },
   ];
 
@@ -35,7 +35,7 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="bg-white border-b border-dark-200 sticky top-0 z-50">
+    <nav className="bg-[#ffffffee] backdrop-blur-[10px] shadow-[0_5px_20px_rgba(0,0,0,0.05)] sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-3">
@@ -56,8 +56,10 @@ export default function Navbar() {
               ))}
             </div>
             <Link href="/" className="flex items-center gap-2">
-              <Image src="/logo.png" alt="Prime Agro Farms Logo" width={40} height={40} className="rounded-full" />
-              <span className="text-2xl font-bold text-primary-600">Prime Agro Farms</span>
+              <Image src="/logo.png" alt="Prime Agro Farms Logo" width={38} height={38} className="rounded-full" />
+              <span className="text-2xl font-extrabold text-primary-600">
+                Prime <span className="text-gold">Agro Farms</span>
+              </span>
             </Link>
           </div>
 
@@ -98,7 +100,7 @@ export default function Navbar() {
         </div>
 
         {mobileOpen && (
-          <div className="md:hidden pb-4 border-t border-dark-200">
+          <div className="md:hidden pb-4 border-t border-dark-200 bg-[#ffffffee]">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
