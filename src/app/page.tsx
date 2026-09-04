@@ -60,13 +60,13 @@ function HeroSlideshow() {
       {heroSlides.map((slide, i) => (
         <div
           key={slide.src}
-          className={`absolute inset-0 flex items-start justify-center ${i === index ? "animate-kenburns" : "opacity-0"}`}
+          className={`absolute inset-0 ${i === index ? "animate-kenburns" : "opacity-0"}`}
         >
           <Image
             src={slide.src}
             alt={slide.alt}
             fill
-            className="object-contain object-top"
+            className="object-cover"
             sizes="100vw"
             priority={i === 0}
           />
