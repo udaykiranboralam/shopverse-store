@@ -59,23 +59,24 @@ function HeroSlideshow() {
       {heroSlides.map((slide, i) => (
         <div
           key={slide.src}
-          className={`absolute inset-0 transition-opacity duration-1000 ${i === index ? "opacity-100" : "opacity-0"}`}
+          className={`absolute inset-0 flex items-center justify-center transition-opacity duration-1000 ${i === index ? "opacity-100" : "opacity-0"}`}
+          style={{ background: "linear-gradient(rgba(32,93,35,0.85), rgba(32,93,35,0.85))" }}
         >
           <Image
             src={slide.src}
             alt={slide.alt}
             fill
-            className="object-cover"
+            className="object-contain"
             sizes="100vw"
             priority={i === 0}
           />
         </div>
       ))}
-      {/* Dark overlay for text readability */}
-      <div className="absolute inset-0 bg-black/55" />
+      {/* Soft overlay so text stays readable but image remains clear */}
+      <div className="absolute inset-0 bg-black/30" />
 
       <div className="relative max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-24">
-        <div className="max-w-[650px]">
+        <div className="max-w-[650px] bg-black/30 backdrop-blur-[2px] rounded-2xl p-6 md:p-8">
           <h1 className="text-5xl md:text-6xl font-extrabold leading-[1.1] mb-6">
             Organic Farming <br />
             <span className="text-[#7CFC00]">Natural Living</span>
