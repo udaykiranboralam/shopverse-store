@@ -1,7 +1,7 @@
 export interface Product {
   id: string;
   name: string;
-  price: number;
+  price?: number;
   description: string;
   category: string;
   image: string;
@@ -12,7 +12,6 @@ export const products: Product[] = [
   {
     id: "1",
     name: "Mango Plantation Plot",
-    price: 2999,
     description: "Own a piece of lush mango orchard. Premium mango trees planted and maintained with organic practices.",
     category: "Fruit Plantations",
     image: "https://images.unsplash.com/photo-1553279768-865429fa0078?w=400&h=400&fit=crop",
@@ -30,7 +29,6 @@ export const products: Product[] = [
   {
     id: "3",
     name: "Coconut Plantation Plot",
-    price: 3999,
     description: "Tropical coconut plantation with high-yield hybrid varieties. Long-term investment with steady returns.",
     category: "Fruit Plantations",
     image: "https://images.unsplash.com/photo-1599940824399-b87987ceb72a?w=400&h=400&fit=crop",
@@ -39,7 +37,6 @@ export const products: Product[] = [
   {
     id: "4",
     name: "Mahogany Plantation Plot",
-    price: 5999,
     description: "Premium mahogany forestry plantation. High-value timber trees with excellent long-term appreciation.",
     category: "Forestry",
     image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=400&fit=crop",
@@ -48,7 +45,6 @@ export const products: Product[] = [
   {
     id: "5",
     name: "Red Sandalwood Plantation",
-    price: 7999,
     description: "Exclusive red sandalwood plantation. Rare and highly valuable timber with exceptional investment potential.",
     category: "Forestry",
     image: "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=400&h=400&fit=crop",
@@ -57,7 +53,6 @@ export const products: Product[] = [
   {
     id: "6",
     name: "Weekend Farm Retreat",
-    price: 1999,
     description: "Experience natural farm living on weekends. Stay at our farm, enjoy fresh produce, and connect with nature.",
     category: "Farm Retreat",
     image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=400&h=400&fit=crop",
@@ -66,7 +61,6 @@ export const products: Product[] = [
   {
     id: "7",
     name: "Farm Plot - Small",
-    price: 14999,
     description: "Own your own farm plot. Small managed ownership model with organic farming on your land.",
     category: "Farm Plots",
     image: "https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=400&h=400&fit=crop",
@@ -75,7 +69,6 @@ export const products: Product[] = [
   {
     id: "8",
     name: "Farm Plot - Premium",
-    price: 39999,
     description: "Premium farm plot with full management support. Includes plantation setup and organic certification.",
     category: "Farm Plots",
     image: "https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=400&h=400&fit=crop",
