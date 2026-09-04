@@ -46,26 +46,60 @@ export default function Home() {
       <section className="relative flex items-center min-h-screen text-white"
         style={{
           background:
-            "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat",
+            "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat",
         }}
       >
         <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-24">
-          <div className="max-w-[650px]">
-            <h1 className="text-5xl md:text-6xl font-extrabold leading-[1.1] mb-6">
-              Organic Farming <br />
-              <span className="text-[#7CFC00]">Natural Living</span>
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 leading-relaxed">
-              సేంద్రియ వ్యవసాయం, సహజ జీవనం
-              <br />
-              <br />
-              Own a farm. Experience nature.
-              <br />
-              Invest in sustainable plantations.
-            </p>
-            <Link href="/products" className="inline-block px-10 py-4 bg-primary-600 text-white rounded-full font-semibold hover:bg-[#205d23] hover:-translate-y-1 transition-all">
-              Explore Offerings
-            </Link>
+          <div className="flex items-center justify-between gap-12">
+            <div className="max-w-[650px]">
+              <h1 className="text-5xl md:text-6xl font-extrabold leading-[1.1] mb-6">
+                Organic Farming <br />
+                <span className="text-[#7CFC00]">Natural Living</span>
+              </h1>
+              <p className="text-xl md:text-2xl mb-8 leading-relaxed">
+                సేంద్రియ వ్యవసాయం, సహజ జీవనం
+                <br />
+                <br />
+                Own a farm. Experience nature.
+                <br />
+                Invest in sustainable plantations.
+              </p>
+              <Link href="/products" className="inline-block px-10 py-4 bg-primary-600 text-white rounded-full font-semibold hover:bg-[#205d23] hover:-translate-y-1 transition-all">
+                Explore Offerings
+              </Link>
+            </div>
+
+            {/* Plantation collage */}
+            <div className="hidden lg:grid grid-cols-2 gap-4 flex-shrink-0">
+              <Image
+                src="/mango.png"
+                alt="Mango Plantation"
+                width={240}
+                height={240}
+                className="rounded-2xl border-4 border-white/40 shadow-2xl object-cover w-[240px] h-[240px]"
+              />
+              <Image
+                src="/anjeer.png"
+                alt="Anjeer Plantation"
+                width={240}
+                height={240}
+                className="rounded-2xl border-4 border-white/40 shadow-2xl object-cover w-[240px] h-[240px] mt-8"
+              />
+              <Image
+                src="/mahaghony.png"
+                alt="Mahogany Plantation"
+                width={240}
+                height={240}
+                className="rounded-2xl border-4 border-white/40 shadow-2xl object-cover w-[240px] h-[240px] -mt-4"
+              />
+              <Image
+                src="/redsandal.png"
+                alt="Red Sandalwood Plantation"
+                width={240}
+                height={240}
+                className="rounded-2xl border-4 border-white/40 shadow-2xl object-cover w-[240px] h-[240px] mt-4"
+              />
+            </div>
           </div>
         </div>
       </section>
