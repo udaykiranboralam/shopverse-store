@@ -10,7 +10,7 @@ export default function Home() {
     <div>
       <section className="relative bg-gradient-to-br from-primary-600 to-primary-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
-          <div className="flex items-center gap-6">
+          <div className="flex items-center justify-center gap-12">
             <div className="max-w-3xl">
               <p className="text-primary-200 text-sm font-semibold uppercase tracking-wider mb-4">Organic Farming, Natural Living</p>
               <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
@@ -35,9 +35,10 @@ export default function Home() {
               <Image
                 src="/logo.png"
                 alt="Prime Agro Farms Logo"
-                width={200}
-                height={200}
-                className="rounded-full border-4 border-white/30 shadow-2xl"
+                width={360}
+                height={360}
+                className="rounded-full border-8 border-white/30 shadow-2xl"
+                style={{ marginRight: "-2rem" }}
               />
             </div>
           </div>
